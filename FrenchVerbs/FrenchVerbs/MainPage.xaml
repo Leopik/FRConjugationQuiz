@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FrenchVerbs.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+               FontSize="Large"
+               x:Name="infinitive"
+           HorizontalOptions="Center"
+           VerticalOptions="Start" />
+
+        <Label Text="Je" FontSize="Large"></Label>
+        <Entry x:Name="first_sng"/>
+        <Label Text="Tu" FontSize="Large"></Label>
+        <Entry x:Name="second_sng"/>
+        <Label Text="Il/Elle" FontSize="Large"></Label>
+        <Entry x:Name="third_sng"/>
+        <Label Text="Nous" FontSize="Large"></Label>
+        <Entry x:Name="first_plr"/>
+        <Label Text="Vous" FontSize="Large"></Label>
+        <Entry x:Name="second_plr"/>
+        <Label Text="Ils/Elles" FontSize="Large"></Label>
+        <Entry x:Name="third_plr"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Check" x:Name="chk_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Next" x:Name="next_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Show answer" x:Name="answr_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
