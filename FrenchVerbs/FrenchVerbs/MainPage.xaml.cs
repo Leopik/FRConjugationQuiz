@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
+using static FrenchVerbs.StartPage;
 
 namespace FrenchVerbs
 {
@@ -33,6 +34,13 @@ namespace FrenchVerbs
         private List<VerbForms> verbs;
         private int currWordIndx = 0;
         private SQLiteAsyncConnection dbConn;
+        private Dictionary<Tense, string> tenseEnumToTable = new Dictionary<Tense, string>
+            {
+                {Tense.PresentIndicative, "present_indicative"},
+                {Tense.FutureIndicative, "future_indicative"},
+                {Tense.ImperfectIndicative, "imperfect_indicative"},
+                {Tense.PastHistoricIndicative, "past_historic_indicative"}
+            };
         private VerbForms currWord;
         public VerbForms CurrentWord { get
             {
@@ -41,7 +49,7 @@ namespace FrenchVerbs
             set
             {
                 currWord = value;
-                Console.WriteLine("asdasdasdasd asd     "+currWordIndx);
+
                 infinitive.Text = currWord.Word;
                 first_sng.TextColor = Color.Gray;
                 first_sng.Text = "";
@@ -58,7 +66,7 @@ namespace FrenchVerbs
             }
         }
         
-        public MainPage()
+        public MainPage(ISet<int> verbGroups, Tense tense)
         {
             InitializeComponent();
 
@@ -68,14 +76,16 @@ namespace FrenchVerbs
             chk_btn.Clicked += (a, b) => CheckCorrectness();
             answr_btn.Clicked += (a, b) => ShowAnswer();
 
-            dbConn.QueryAsync<VerbForms>("select * from present_indicative order by random()").ContinueWith((queryTsk) =>
+            dbConn.QueryAsync<VerbForms>($"select * from {tenseEnumToTable[tense]} order by random()").ContinueWith((queryTsk) =>
             {
                 verbs = queryTsk.Result;
-                next_btn.IsEnabled = true;
-                answr_btn.IsEnabled = true;
-                chk_btn.IsEnabled = true;
-
-                CurrentWord = verbs[currWordIndx];
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    next_btn.IsEnabled = true;
+                    answr_btn.IsEnabled = true;
+                    chk_btn.IsEnabled = true;
+                    CurrentWord = verbs[currWordIndx];
+                });
             });
         }
 

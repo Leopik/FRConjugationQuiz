@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FrenchVerbs.StartPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Spacing="10">
+
+            <Button x:Name="start_btn"  Text="Start" VerticalOptions="Center" Margin="100"></Button>
+            <Picker x:Name="tense_picker" VerticalOptions="End">
+                <Picker.Items>
+                    <x:String>Présent indicatif</x:String>
+                    <x:String>Futur indicatif</x:String>
+                    <x:String>Imparfait indicatif</x:String>
+                    <x:String>Passé simple indicatif</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="first_group_chkbx" IsChecked="True"></CheckBox>
+                <Label Text="First group" FontSize="Large"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="second_group_chkbx" IsChecked="True"></CheckBox>
+                <Label Text="Second group" FontSize="Large"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="third_group_chkbx" IsChecked="True"></CheckBox>
+                <Label Text="Third group" FontSize="Large"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
