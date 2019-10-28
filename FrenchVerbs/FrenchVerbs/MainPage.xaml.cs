@@ -75,8 +75,11 @@ namespace FrenchVerbs
             next_btn.Clicked += (a, b) => CurrentWord = verbs[++currWordIndx];
             chk_btn.Clicked += (a, b) => CheckCorrectness();
             answr_btn.Clicked += (a, b) => ShowAnswer();
+            var query = $"select * from {tenseEnumToTable[tense]}, verbs " +
+                $"where verbs.word={tenseEnumToTable[tense]}.word " +
+                $"and verbs.'group' in ({string.Join(",", verbGroups.Select(x => x + ""))}) order by random()";
 
-            dbConn.QueryAsync<VerbForms>($"select * from {tenseEnumToTable[tense]} order by random()").ContinueWith((queryTsk) =>
+            dbConn.QueryAsync<VerbForms>(query).ContinueWith((queryTsk) =>
             {
                 verbs = queryTsk.Result;
                 Device.BeginInvokeOnMainThread(() =>

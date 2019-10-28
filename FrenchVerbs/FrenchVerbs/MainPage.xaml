@@ -16,17 +16,17 @@
            VerticalOptions="Start" />
 
         <Label Text="Je" FontSize="Large"></Label>
-        <Entry x:Name="first_sng"/>
+        <Entry x:Name="first_sng" IsSpellCheckEnabled="False"/>
         <Label Text="Tu" FontSize="Large"></Label>
-        <Entry x:Name="second_sng"/>
+        <Entry x:Name="second_sng" IsSpellCheckEnabled="False"/>
         <Label Text="Il/Elle" FontSize="Large"></Label>
-        <Entry x:Name="third_sng"/>
+        <Entry x:Name="third_sng" IsSpellCheckEnabled="False"/>
         <Label Text="Nous" FontSize="Large"></Label>
-        <Entry x:Name="first_plr"/>
+        <Entry x:Name="first_plr" IsSpellCheckEnabled="False"/>
         <Label Text="Vous" FontSize="Large"></Label>
-        <Entry x:Name="second_plr"/>
+        <Entry x:Name="second_plr" IsSpellCheckEnabled="False"/>
         <Label Text="Ils/Elles" FontSize="Large"></Label>
-        <Entry x:Name="third_plr"/>
+        <Entry x:Name="third_plr" IsSpellCheckEnabled="False"/>
 
         <StackLayout Orientation="Horizontal">
             <Button Text="Check" x:Name="chk_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
