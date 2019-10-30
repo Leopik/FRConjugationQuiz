@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="FrenchVerbs.MainPage"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#CDEDF6"
+             Padding="10">
 
     <StackLayout>
         <!-- Place new controls here -->
@@ -13,25 +15,25 @@
                FontSize="Large"
                x:Name="infinitive"
            HorizontalOptions="Center"
-           VerticalOptions="Start" />
+           VerticalOptions="Start"  TextColor="#042A2B"/>
 
-        <Label Text="Je" FontSize="Large"></Label>
+        <Label Text="Je" FontSize="Large" TextColor="#042A2B"></Label>
         <Entry x:Name="first_sng" IsSpellCheckEnabled="False"/>
-        <Label Text="Tu" FontSize="Large"></Label>
+        <Label Text="Tu" FontSize="Large"  TextColor="#042A2B"></Label>
         <Entry x:Name="second_sng" IsSpellCheckEnabled="False"/>
-        <Label Text="Il/Elle" FontSize="Large"></Label>
+        <Label Text="Il/Elle" FontSize="Large" TextColor="#042A2B"></Label>
         <Entry x:Name="third_sng" IsSpellCheckEnabled="False"/>
-        <Label Text="Nous" FontSize="Large"></Label>
+        <Label Text="Nous" FontSize="Large" TextColor="#042A2B"></Label>
         <Entry x:Name="first_plr" IsSpellCheckEnabled="False"/>
-        <Label Text="Vous" FontSize="Large"></Label>
+        <Label Text="Vous" FontSize="Large" TextColor="#042A2B"></Label>
         <Entry x:Name="second_plr" IsSpellCheckEnabled="False"/>
-        <Label Text="Ils/Elles" FontSize="Large"></Label>
+        <Label Text="Ils/Elles" FontSize="Large" TextColor="#042A2B"></Label>
         <Entry x:Name="third_plr" IsSpellCheckEnabled="False"/>
 
         <StackLayout Orientation="Horizontal">
-            <Button Text="Check" x:Name="chk_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Next" x:Name="next_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Show answer" x:Name="answr_btn" IsEnabled="False" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Show answer" x:Name="answr_btn" IsEnabled="False" HorizontalOptions="FillAndExpand" BackgroundColor="#3A99C4"  TextColor="#042A2B"/>
+            <Button Text="Check" x:Name="chk_btn" IsEnabled="False" HorizontalOptions="FillAndExpand" BackgroundColor="#3A99C4"  TextColor="#042A2B"/>
+            <Button Text="Next >" x:Name="next_btn" IsEnabled="False" HorizontalOptions="FillAndExpand" BackgroundColor="#3A99C4" TextColor="#042A2B"/>
         </StackLayout>
     </StackLayout>
 

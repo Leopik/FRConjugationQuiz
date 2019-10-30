@@ -77,7 +77,14 @@ namespace FrenchVerbs
             answr_btn.Clicked += (a, b) => ShowAnswer();
             var query = $"select * from {tenseEnumToTable[tense]}, verbs " +
                 $"where verbs.word={tenseEnumToTable[tense]}.word " +
-                $"and verbs.'group' in ({string.Join(",", verbGroups.Select(x => x + ""))}) order by random()";
+                $"and verbs.'group' in ({string.Join(",", verbGroups.Select(x => x + ""))}) " +
+                $"and first_singular not like '' " +
+                $"and second_singular not like '' " +
+                $"and third_singular not like '' " +
+                $"and first_plural not like '' " +
+                $"and second_plural not like '' " +
+                $"and third_plural not like '' " +
+                $"order by random()";
 
             dbConn.QueryAsync<VerbForms>(query).ContinueWith((queryTsk) =>
             {

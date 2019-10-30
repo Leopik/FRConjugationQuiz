@@ -4,12 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FrenchVerbs.StartPage">
+             x:Class="FrenchVerbs.StartPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="#CDEDF6" Padding="10">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Spacing="10">
 
-            <Button x:Name="start_btn"  Text="Start" VerticalOptions="Center" Margin="100"></Button>
-            <Picker x:Name="tense_picker" VerticalOptions="End">
+            <Button x:Name="start_btn"  Text="Start" VerticalOptions="Center" TextColor="#042A2B" Margin="100" BackgroundColor="#3A99C4"></Button>
+            <Label Text="Tense:" FontSize="Large" TextColor="#042A2B"></Label>
+            <Picker x:Name="tense_picker" VerticalOptions="End" TextColor="#042A2B">
                 <Picker.Items>
                     <x:String>Présent indicatif</x:String>
                     <x:String>Futur indicatif</x:String>
@@ -19,15 +22,15 @@
             </Picker>
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="first_group_chkbx" IsChecked="True"></CheckBox>
-                <Label Text="First group" FontSize="Large"></Label>
+                <Label Text="First group" FontSize="Large" TextColor="#042A2B"></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="second_group_chkbx" IsChecked="True"></CheckBox>
-                <Label Text="Second group" FontSize="Large"></Label>
+                <Label Text="Second group" FontSize="Large" TextColor="#042A2B"></Label>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="third_group_chkbx" IsChecked="True"></CheckBox>
-                <Label Text="Third group" FontSize="Large"></Label>
+                <Label Text="Third group" FontSize="Large" TextColor="#042A2B"></Label>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
